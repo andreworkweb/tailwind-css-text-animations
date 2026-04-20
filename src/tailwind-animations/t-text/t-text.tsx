@@ -193,8 +193,42 @@ const Tailwind_text = () => {
             </button>
 
             {show3 && (
-              <div className="mt-6 w-full bg-gray-900 rounded-xl p-5 animate-fade-in text-left">
-                <p className="text-emerald-400 text-sm font-mono">!</p>
+              <div className="mt-6 w-full flex flex-col gap-4 text-left animate-fade-in">
+                <div className="bg-gray-900 rounded-xl p-5 overflow-x-auto">
+                  <p className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wider">Tailwind (JSX)</p>
+                  <pre className="text-emerald-400 text-sm font-mono">
+                    <code>
+                        {`<h1 className="text-5xl font-black text-gray-800 animate-blur-reveal">
+                Welcome to the Future
+              </h1>`}
+                    </code>
+                  </pre>
+                </div>
+
+                <div className="bg-gray-900 rounded-xl p-5 overflow-x-auto">
+                  <p className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wider">CSS</p>
+                  <pre className="text-blue-400 text-sm font-mono">
+                    <code>
+                        {`.animate-blur-reveal {
+  animation: blurReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  opacity: 0; 
+}
+
+@keyframes blurReveal {
+  0% { 
+    filter: blur(12px); 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  100% { 
+    filter: blur(0); 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}`}
+                    </code>
+                  </pre>
+                </div>
               </div>
             )}
           </div>
@@ -217,9 +251,75 @@ const Tailwind_text = () => {
               {show4 ? "Hide Code" : "Show Code"}
             </button>
 
-            {show4 && (
-              <div className="mt-6 w-full bg-gray-900 rounded-xl p-5 animate-fade-in text-left">
-                <p className="text-emerald-400 text-sm font-mono">!</p>
+                        {show4 && (
+              <div className="mt-6 w-full flex flex-col gap-4 text-left animate-fade-in">
+                <div className="bg-gray-900 rounded-xl p-5 overflow-x-auto">
+                  <p className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wider">Tailwind (JSX)</p>
+                  <pre className="text-emerald-400 text-sm font-mono">
+                    <code>
+                        {`<h1
+                className="text-6xl font-black text-gray-900 animate-glitch relative inline-block"
+                data-text="SYSTEM FAILURE"
+              >
+                SYSTEM FAILURE
+              </h1>`}
+                    </code>
+                  </pre>
+                </div>
+
+                <div className="bg-gray-900 rounded-xl p-5 overflow-x-auto">
+                  <p className="text-gray-400 text-xs font-bold mb-2 uppercase tracking-wider">CSS</p>
+                  <pre className="text-blue-400 text-sm font-mono">
+                    <code>
+                        {`.glitch-wrapper {
+  position: relative;
+}
+
+.animate-glitch::before,
+.animate-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.animate-glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip-path: inset(45% 0 10% 0);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.animate-glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  clip-path: inset(20% 0 80% 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 80% 0); }
+  20% { clip-path: inset(60% 0 10% 0); }
+  40% { clip-path: inset(40% 0 50% 0); }
+  60% { clip-path: inset(80% 0 5% 0); }
+  80% { clip-path: inset(10% 0 70% 0); }
+  100% { clip-path: inset(30% 0 20% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(10% 0 60% 0); }
+  20% { clip-path: inset(30% 0 20% 0); }
+  40% { clip-path: inset(70% 0 10% 0); }
+  60% { clip-path: inset(20% 0 50% 0); }
+  80% { clip-path: inset(50% 0 30% 0); }
+  100% { clip-path: inset(5% 0 80% 0); }
+}`}
+                    </code>
+                  </pre>
+                </div>
               </div>
             )}
           </div>
